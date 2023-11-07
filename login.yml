@@ -11,7 +11,7 @@ jobs:
       - name: Create issue using REST API
         run: |
           curl --request POST \
-          --url https://sandbox.bff.meetsam.io/graphql
+          --url https://sandbox.bff.meetsam.io/graphql \
           --header 'content-type: application/json' \
           --data '{
             "query":"mutation($email: String!, $password: String!){\nlogin(input: { email: $email, password: $password }) {\n    ok\n   \tsession {\n      travelerGuid\n      tester\n      companyGuid\n      token\n    }\n    # profile\n    traveler {\n        id\n        emailAddress\n    }\n  }\n}","variables":{"email":"qafourth.qa4.manager@demo.fcmtravel.com","password":"sA{;D1K8Oud]2DQ"}
